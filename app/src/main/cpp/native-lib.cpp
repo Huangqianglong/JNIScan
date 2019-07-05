@@ -38,7 +38,7 @@ void getAllFiles(string path, JNIEnv *env, jobject instance, jmethodID show_meth
             continue;
         else if (ptr->d_type == 8)//file
         {
-            path3 = ptr->d_name;
+            path3 = path + "/" + ptr->d_name;
             int size = strlen(ptr->d_name);
             if (ptr->d_name[0] != '.')//非隐藏文件
             {
